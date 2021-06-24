@@ -48,8 +48,6 @@ if (aliquotaINSSValor == undefined) {
   salarioLiquido = salarioBase - aliquotaINSSValor; 
 }
 
-console.log(salarioLiquido)
-
 if (salarioLiquido <= 1903.98){
   aliquotaIR = 0;
 } else if (salarioLiquido >= 1903.99 && salarioLiquido <= 2826.65){
@@ -68,6 +66,6 @@ if (salarioLiquido <= 1903.98){
 
 let IRTotal = (aliquotaIR * salarioLiquido / 100) - parcelaIR;
 salarioLiquido = salarioLiquido - IRTotal;
-console.log(salarioLiquido)
+console.log("Salário liquido:" + salarioLiquido)
 
 
