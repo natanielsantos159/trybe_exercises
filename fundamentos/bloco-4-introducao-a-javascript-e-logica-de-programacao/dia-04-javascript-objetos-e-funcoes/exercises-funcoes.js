@@ -121,4 +121,3 @@ function verificaFimPalavra(word, ending){
   }
 }
 console.log(verificaFimPalavra('nataniel', 'niel'))
-
