@@ -86,3 +86,6 @@ function verificaNumeroMaisComum(array) {
 }
 
 console.log(verificaNumeroMaisComum(array));
+
+
+
