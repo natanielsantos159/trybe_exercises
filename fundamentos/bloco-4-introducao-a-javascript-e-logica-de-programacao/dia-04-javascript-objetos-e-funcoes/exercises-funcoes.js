@@ -86,3 +86,16 @@ function verificaNumeroMaisComum(array) {
 }
 
 console.log(verificaNumeroMaisComum(array))
+
+// Crie uma função que receba um número inteiro N e retorne o somatório de todos os números de 1 até N.
+
+function getSummation(n){
+  let sum = 0;
+  for(let i = 0; i <= n; i+=1){
+    sum += i;
+  }
+
+  return sum;
+}
+
+console.log(getSummation(10));
