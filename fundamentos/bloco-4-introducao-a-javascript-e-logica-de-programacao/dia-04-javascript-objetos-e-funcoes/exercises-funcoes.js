@@ -37,27 +37,27 @@ function menorNumero(array) {
     }
   }
 
-  return menorNumeroIndex
+  return menorNumeroIndex;
 }
 
-console.log(menorNumero(array))
+console.log(menorNumero(array));
 
 // Crie uma função que receba um array de nomes e retorne o nome com a maior quantidade de caracteres.
 
-array = ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana'];
+array = ["José", "Lucas", "Nádia", "Fernanda", "Cairo", "Joana"];
 
 function maiorNome(array) {
   let maiorNome;
-  let maiorNomeTamanho = 0
+  let maiorNomeTamanho = 0;
 
-  for(nome of array) {
-    if (nome.length > maiorNomeTamanho){
+  for (nome of array) {
+    if (nome.length > maiorNomeTamanho) {
       maiorNome = nome;
       maiorNomeTamanho = nome.length;
     }
   }
 
-  return maiorNome
+  return maiorNome;
 }
 
 console.log(maiorNome(array));
@@ -68,24 +68,24 @@ array = [2, 3, 2, 5, 8, 2, 3];
 
 function verificaNumeroMaisComum(array) {
   let numeroMaisComum;
-  let numeroMaisComumCount=0;
-  for (let i = 0; i < array.length; i++){
-    let NumeroAtualCount=0;
-    for (let j = 0; j < array.length; j++){
-      if (array[i] == array[j]){
+  let numeroMaisComumCount = 0;
+  for (let i = 0; i < array.length; i++) {
+    let NumeroAtualCount = 0;
+    for (let j = 0; j < array.length; j++) {
+      if (array[i] == array[j]) {
         NumeroAtualCount++;
       }
     }
-    if (NumeroAtualCount > numeroMaisComumCount){
+    if (NumeroAtualCount > numeroMaisComumCount) {
       numeroMaisComum = array[i];
       numeroMaisComumCount = NumeroAtualCount;
     }
   }
 
-  return numeroMaisComum
+  return numeroMaisComum;
 }
 
-console.log(verificaNumeroMaisComum(array))
+console.log(verificaNumeroMaisComum(array));
 
 // Crie uma função que receba um número inteiro N e retorne o somatório de todos os números de 1 até N.
 
