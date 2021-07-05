@@ -61,10 +61,13 @@
       element.innerHTML = "Exercício 5.2 - JavaScript DOM"
       document.body.appendChild(element)
 
-      let div = document.createElement('div')
-      document.body.appendChild(div)
-      div.className = 'main-content'
+      let createMainContent = document.createElement('div')
+      document.body.appendChild(createMainContent)
+      createMainContent.className = 'main-content'
 
+      let createCenterContent = document.createElement('div')
+      let mainContentDiv = document.getElementsByClassName('main-content')[0]
+      mainContentDiv.appendChild(createCenterContent)
     </script>
   </body>
 </html>
