@@ -36,3 +36,29 @@ function findOldest(pessoas){
 }
 
 console.log(findOldest(pessoas))
+
+// ----------------------------------
+
+// Você é responsável pelo sistema de um novo jogo de fantasia medieval. 
+// Crie um algoritmo que recebe uma Classe e retorna os pontos de vida do(a) personagem, com base na tabela a seguir:
+//   Classe   | Pontos de Vida 
+//    Mago           5PV                
+//  Arqueiro         10PV              
+//  Guerreiro        15PV               
+//  Cavaleiro        20PV           
+// O retorno deve ser no seguinte formato:
+// Mago, 5PV.
+// Arqueiro, 10PV.
+// Desafio: faça sem usar estruturas condicionais (ifs ou switchs)
+
+let personagens = [
+  { clase: 'Mago', pontosDeVida: '5PV'}, 
+  { clase: 'Arqueiro', pontosDeVida: '10PV'},
+  { clase: 'Guerreiro', pontosDeVida: '15PV'},
+  { clase: 'Cavaleiro', pontosDeVida: '20PV'},
+]
+function getPontosDeVida(personagens){
+  console.table(personagens)
+}
+
+getPontosDeVida(personagens)
