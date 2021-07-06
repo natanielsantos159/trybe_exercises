@@ -33,8 +33,8 @@ function getInput(element) {
     /* Referencia: https://stackoverflow.com/questions/14542062/eventlistener-enter-key */
     classTech.innerText = element.target.value;
     element.target.value = "";
+    changePlaceholder(element)
   }
-  changePlaceholder(element)
 }
 
 function changePlaceholder(element) {
