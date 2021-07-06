@@ -33,17 +33,20 @@ function getInput(element) {
     /* Referencia: https://stackoverflow.com/questions/14542062/eventlistener-enter-key */
     classTech.innerText = element.target.value;
     element.target.value = "";
+  }
+  changePlaceholder(element)
+}
 
-    if (element.target.placeholder.includes("primeira")) {
-      element.target.placeholder = element.target.placeholder.replace("primeira", "segunda");
-      addClassTech(secondDiv)
-    } else if (element.target.placeholder.includes("segunda")) {
-      element.target.placeholder = element.target.placeholder.replace("segunda", "terceira");
-      addClassTech(thirdDiv)
-    } else if (element.target.placeholder.includes("terceira")) {
-      element.target.placeholder = element.target.placeholder.replace("terceira", "primeira");
-      removerClassTech(thirdDiv)
-    }
+function changePlaceholder(element) {
+  if (element.target.placeholder.includes("primeira")) {
+    element.target.placeholder = element.target.placeholder.replace("primeira", "segunda");
+    addClassTech(secondDiv)
+  } else if (element.target.placeholder.includes("segunda")) {
+    element.target.placeholder = element.target.placeholder.replace("segunda", "terceira");
+    addClassTech(thirdDiv)
+  } else if (element.target.placeholder.includes("terceira")) {
+    element.target.placeholder = element.target.placeholder.replace("terceira", "primeira");
+    removerClassTech(thirdDiv)
   }
 }
 // 4 Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
