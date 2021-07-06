@@ -122,7 +122,15 @@
         h3Item.innerText = "h3";
         mainContent.appendChild(h3Item);
       }
-      
+
+      // 10 Adicione a classe title na tag h1 criada;
+      title.className = 'title'
+
+      // 11 Adicione a classe description nas 3 tags h3 criadas;
+      let h3items = querySelectorAll('.main-content h3');
+      for (let item of h3items) {
+        item.className = 'description'
+      }
     </script>
   </body>
 </html>
