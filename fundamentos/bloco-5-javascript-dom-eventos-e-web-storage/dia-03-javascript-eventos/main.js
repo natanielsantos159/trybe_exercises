@@ -53,7 +53,7 @@ function changePlaceholder(element) {
 // redirecione para alguma página;
 // 4.1 Que tal redirecionar para seu portifólio?
 myWebpage.addEventListener('dblclick', function() {
-  windows.location.replace("https://natanielsantos159.github.io/")
+  window.location.replace('https://natanielsantos159.github.io/')
 })
 // 5 Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
 // a cor do mesmo;
