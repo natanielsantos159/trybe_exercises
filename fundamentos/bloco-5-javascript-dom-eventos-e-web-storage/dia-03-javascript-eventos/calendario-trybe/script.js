@@ -61,14 +61,14 @@ addDays(dezDaysList);
 // Adicione a este botão a ID "btn-holiday" .
 // Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .
 
-function createButton(string) {
+function createHolidayButton(string) {
   let buttonElement = document.createElement("button");
   let buttonsContainer = document.querySelector(".buttons-container");
   buttonElement.id = "btn-holiday";
   buttonElement.innerText = string;
   buttonsContainer.appendChild(buttonElement);
 }
-createButton("Feriados");
+createHolidayButton("Feriados");
 
 // Exercício 3:
 // Implemente uma função que adicione ao botão "Feriados" um evento de "click" que muda a cor de fundo dos dias que possuem a classe "holiday" .
@@ -89,3 +89,5 @@ function clickHolidayButton(button) {
   }
   holidayButtonIsOn = !holidayButtonIsOn // inverter valor do botao
 }
+
+
