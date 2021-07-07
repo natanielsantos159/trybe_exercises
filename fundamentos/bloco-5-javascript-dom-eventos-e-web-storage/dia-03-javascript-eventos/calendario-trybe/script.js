@@ -174,8 +174,10 @@ for (task of taskDiv){
   task.addEventListener('click', function(element){
     if(taskDivIsSelected){
       task.className = task.className.replace(' selected','')
+      task.style.border = '1px solid black'
     } else {
       task.className += ' selected'
+      task.style.border = '3px solid black'
     }
 
     taskDivIsSelected = !taskDivIsSelected
