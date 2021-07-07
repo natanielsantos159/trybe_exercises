@@ -184,3 +184,23 @@ for (task of taskDiv){
   }
   )
 }
+
+// Exercício 10:
+// Implemente uma função que adiciona um evento que, ao clicar em um dia do mês no calendário, atribua a este dia a cor da legenda da sua tarefa selecionada.
+// Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração inicial rgb(119,119,119) .
+
+for (let day of daysElement){
+  day.addEventListener('click', function(){
+    let isDayColored = day.className.includes('colored')
+
+    if(taskDivIsSelected && !isDayColored){
+      let selectedDiv = document.querySelector('.selected')
+      day.style.backgroundColor = selectedDiv.style.backgroundColor
+      day.className += ' colored'
+    } else if (taskDivIsSelected && isDayColored){
+      day.style.backgroundColor = "#eee"
+      isDayColored = !isDayColored
+      day.className = day.className.replace(' colored', '')
+    }
+  })
+}
