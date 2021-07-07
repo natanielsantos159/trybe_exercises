@@ -113,7 +113,7 @@ fridayButton.addEventListener('click', function(button) {
   let fridays = document.getElementsByClassName('friday')
   for (let day of fridays){
     if (fridayButtonIsOn){
-      day.innerText = day.innerText.replace('🎉', '')
+      day.innerText = day.innerText.replace(' 🎉', '')
     } else {
       day.innerText = day.innerText + ' 🎉'
     }
@@ -158,7 +158,27 @@ function newTaskDiv(color){
   let taskDiv = document.createElement('div');
   let myTasksContainer = document.querySelector('.my-tasks')
   taskDiv.style.backgroundColor = color
+  taskDiv.className = 'task'
   myTasksContainer.appendChild(taskDiv)
 }
 
 newTaskDiv("yellow")
+
+// Exercício 9:
+// Implemente uma função que adiciona um evento que, ao clicar no elemento com a tag <div> referente a cor da sua tarefa, atribua a este elemento a classe task selected , ou seja, quando sua tarefa possuir a classe task selected , ela estará selecionada.
+// Ao clicar novamente no elemento, a sua classe deverá voltar a ser somente task , ou seja, esta tarefa está deixando de ser uma tarefa selecionada.
+
+let taskDiv = document.querySelectorAll('.task')
+let taskDivIsSelected = false
+for (task of taskDiv){
+  task.addEventListener('click', function(element){
+    if(taskDivIsSelected){
+      task.className = task.className.replace(' selected','')
+    } else {
+      task.className += ' selected'
+    }
+
+    taskDivIsSelected = !taskDivIsSelected
+  }
+  )
+}
