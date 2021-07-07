@@ -44,3 +44,17 @@ function addDays(array){
 }
 
 addDays(dezDaysList)
+
+// Exercício 2:
+// Implemente uma função que receba como parâmetro a string "Feriados" e crie dinamicamente um botão com o nome "Feriados".
+// Adicione a este botão a ID "btn-holiday" .
+// Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .
+
+function createButton(string) {
+  let buttonElement = document.createElement('button')
+  let buttonsContainer = document.querySelector('.buttons-container')
+  buttonElement.id = 'btn-holiday'
+  buttonElement.innerText = string
+  buttonsContainer.appendChild(buttonElement)
+}
+createButton('Feriados')
