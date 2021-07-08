@@ -21,3 +21,13 @@ function changeTextColor(){
     localStorage.setItem('text-color', textColor)
   }
 }
+
+let btnFontSize= document.getElementById('btn-font-size') 
+btnFontSize.addEventListener('click', changeFontSize)
+function changeFontSize(){
+  let fontSize = document.getElementById('font-size').value
+  if(fontSize !== null){
+    document.body.style.fontSize = fontSize
+    localStorage.setItem('font-size', fontSize)
+  }
+}

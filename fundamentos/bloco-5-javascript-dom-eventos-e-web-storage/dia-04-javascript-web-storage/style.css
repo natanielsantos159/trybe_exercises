@@ -11,5 +11,6 @@ section p {
 }
 
 #personalization div {
-  display: inline-block;
+  display: block;
+  margin: 10px;
 }
