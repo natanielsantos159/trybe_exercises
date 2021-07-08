@@ -7,4 +7,9 @@ section p {
 #personalization {
   width: 500px;
   margin: auto;
+  margin-bottom: 100px;
+}
+
+#personalization div {
+  display: inline-block;
 }
