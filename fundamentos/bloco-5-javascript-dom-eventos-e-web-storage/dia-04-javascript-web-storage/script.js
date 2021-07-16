@@ -1,3 +1,7 @@
+windows.onload = function () {
+  
+}
+
 let btnColor = document.getElementById("btn-color");
 btnColor.addEventListener("click", changeBackgroundColor);
 function changeBackgroundColor() {
