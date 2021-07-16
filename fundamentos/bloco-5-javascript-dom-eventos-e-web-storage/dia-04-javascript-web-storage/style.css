@@ -1,0 +1,16 @@
+section p {
+  width: 70%;
+  margin: auto;
+  text-align: justify;
+}
+
+#personalization {
+  width: 500px;
+  margin: auto;
+  margin-bottom: 100px;
+}
+
+#personalization div {
+  display: block;
+  margin: 10px;
+}
