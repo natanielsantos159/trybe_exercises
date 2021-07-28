@@ -39,3 +39,16 @@ const getWarriorDamage = () => {
   const damage =  Math.floor(Math.random() * (warror.strength - (warror.strength * warrior.weaponDmg) + 1)) + warror.strength
   return damage
 }
+
+const getMageDamageAndMana = () => {
+  let damage, mana;
+  if(mage.mana < 15){
+    damage = 'Não possui mana suficiente' 
+    mana = 0;
+  } else {
+    damage = Math.floor(Math.random() * (mage.strength - (mage.intelligence * 2) + 1)) + mage.strength
+    mana = 15
+  }
+
+  return damage, mana;
+}
