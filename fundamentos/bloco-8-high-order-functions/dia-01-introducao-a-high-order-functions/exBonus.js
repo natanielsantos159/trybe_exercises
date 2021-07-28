@@ -28,6 +28,14 @@ O dano será um número aleatório entre 15 (dano mínimo) e o valor do atributo
  */
 
 const getDragonDamage = () => {
-  const damage =Math.floor(Math.random() * (dagron.damage - 15 + 1)) + 15
+  const damage = Math.floor(Math.random() * (dagron.strength - 15 + 1)) + 15
+  return damage
+}
+/* 
+2 - Crie uma função que retorna o dano causado pelo warrior .
+O dano será um número aleatório entre o valor do atributo strength (dano mínimo) e o valor de strength * weaponDmg (dano máximo). */
+
+const getWarriorDamage = () => {
+  const damage =  Math.floor(Math.random() * (warror.strength - (warror.strength * warrior.weaponDmg) + 1)) + warror.strength
   return damage
 }
