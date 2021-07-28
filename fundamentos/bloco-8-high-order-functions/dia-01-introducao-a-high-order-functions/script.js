@@ -4,6 +4,7 @@ A sua função deve receber como parâmetro o nome completo da pessoa funcionár
 
 const getInfo = (nome) => {
   let email = nome.toLowerCase().split(' ').join('_') + '@trybe.com'
+  console.log(nome, email)
   return {
     nome: nome,
     email: email,
