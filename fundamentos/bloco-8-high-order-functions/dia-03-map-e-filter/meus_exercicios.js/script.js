@@ -22,7 +22,7 @@ lines.forEach(line => {
   //console.log({date: date, name: name, year: year, letterboxdURI: letterboxdURI})
 })
  */
-const movies = `Date,Name,Year,Letterboxd URI
+const csvString = `Date,Name,Year,Letterboxd URI
 2021-07-14,Your Name Engraved Herein,2020,https://boxd.it/qWwA
 2021-07-14,Parasite,2019,https://boxd.it/hTha
 2021-07-14,Joker,2019,https://boxd.it/h4cS
@@ -87,14 +87,14 @@ const movies = `Date,Name,Year,Letterboxd URI
 `
 
 /* 1 Cria uma função chamada convertCsvToObject   que converte a string acima em um array de objetos, e cada objeto são informações de um filme. As chaves que o objeto deve ter estão na primeira linha. Obs: leve em consideração que há filmes que tem virgula no nome.
-2 Crie uma função que retorne o array de objetos criado no exercicio 1 em ordem alfabética
 3 Crie uma função que retorne o nome e a data de lançamento do filme mais antigo da lista
 4 Crie retorne o nome e a data de lançamento do filme com o maior título
 5 Crie uma função que retorne um array com todos os títulos em Camel Case. Por exemplo, "yourNameEngravedHerein"
  */
 function convertCsvToObject(string){
-  const lines = string.split('\n');
-  lines.forEach(line => {
+  const lines = string.split('\n')
+  lines.shift()
+  const arrayOfMovies = lines.map(line => {
     let splittedLine = line.split(',')
     let letterboxdURI = splittedLine.pop()
     let year = splittedLine.pop()
@@ -106,8 +106,28 @@ function convertCsvToObject(string){
       name.shift()
       name = name.join('')
     } 
-    console.log({date: date, name: name, year: year, letterboxdURI: letterboxdURI})
-  })
-}
-convertCsvToObject(movies)
 
+    return {date: date, name: name, year: year, letterboxdURI: letterboxdURI}
+  })
+  return arrayOfMovies
+}
+
+const movies = convertCsvToObject(csvString)
+/* console.log(movies) */
+//2 Crie uma função que retorne o array de objetos criado no exercicio 1 em ordem alfabética
+
+const sortMoviesByName = (moviesList) => {
+  const sortedList = moviesList.sort((a, b) => {
+    if(a.name > b.name){
+      return 1
+    }
+    if(a.name < b.name){
+      return -1
+    } 
+    return 0
+  })
+  return sortedList
+}
+
+const moviesSortedByName = sortMoviesByName(movies)
+console.log(moviesSortedByName)
