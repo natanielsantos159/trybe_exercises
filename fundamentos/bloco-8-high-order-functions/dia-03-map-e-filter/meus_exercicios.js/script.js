@@ -86,7 +86,6 @@ const csvString = `Date,Name,Year,Letterboxd URI
 2021-07-14,Brokeback Mountain,2005,https://boxd.it/2b2q`
 
 /* 1 Cria uma função chamada convertCsvToObject   que converte a string acima em um array de objetos, e cada objeto são informações de um filme. As chaves que o objeto deve ter estão na primeira linha. Obs: leve em consideração que há filmes que tem virgula no nome.
-5 Crie uma função que retorne um array com todos os títulos em Camel Case. Por exemplo, "yourNameEngravedHerein"
  */
 function convertCsvToObject(string){
   const lines = string.split('\n')
@@ -154,3 +153,26 @@ const getLongestTitle = (moviesList) => {
 }
 
 console.log(getLongestTitle(movies))
+
+//5 Crie uma função que retorne um array com todos os títulos em Camel Case. Por exemplo, "yourNameEngravedHerein"
+const capitalize = (string) => {
+  const lower = string.toLowerCase()
+  return string.charAt(0).toUpperCase() + lower.slice(1)
+}
+
+const covertToCamelCase = (moviesList) => {
+  const convertedList = moviesList.map((movie) => {
+    let movieName = movie.name.toLowerCase() //converte o nome para minusculo
+    const regex = /\w+/g; // expressão regular que pega apenas letras e numeros
+    let words = movieName.match(regex); // aplicando a regex
+    let firstWord = words[0] // guarda a primeira palavra 
+    words.shift() // remove a primeira palavra
+    words = words.map(word => capitalize(word)) // capitaliza todas as palavras
+    let camelCase = firstWord + words.join('') //guardo nessa variavel a primera palavra(que está em minusculo porque tirei antes de capitalizar) + as outras palavras, ja capitalizadas
+    return camelCase
+  })
+
+  console.log(convertedList)
+}
+
+covertToCamelCase(movies)
