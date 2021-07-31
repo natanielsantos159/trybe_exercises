@@ -86,7 +86,6 @@ const csvString = `Date,Name,Year,Letterboxd URI
 2021-07-14,Brokeback Mountain,2005,https://boxd.it/2b2q`
 
 /* 1 Cria uma função chamada convertCsvToObject   que converte a string acima em um array de objetos, e cada objeto são informações de um filme. As chaves que o objeto deve ter estão na primeira linha. Obs: leve em consideração que há filmes que tem virgula no nome.
-4 Crie retorne o nome e a data de lançamento do filme com o maior título
 5 Crie uma função que retorne um array com todos os títulos em Camel Case. Por exemplo, "yourNameEngravedHerein"
  */
 function convertCsvToObject(string){
@@ -137,5 +136,19 @@ const sortMoviesByYear = (moviesList) => {
   return sortedList
 }
 
-const moviesSortedByYear = sortMoviesByYear(movies)
-console.log(moviesSortedByYear)
+const moviesSortedByYear = sortMoviesByYear(movies) 
+
+const getLongestTitle = (moviesList) => {
+  const sorted = moviesList.sort((movieA, movieB) => {
+    if(movieA.name.length > movieB.name.length){
+      return -1
+    }
+    if(movieA.name.length < movieB.name.length){
+      return 1
+    } 
+    return 0
+  });
+  return `Filme com o titulo mais longo: ${sorted[0].name} (${sorted[0].year})`;
+}
+
+console.log(getLongestTitle(movies))
