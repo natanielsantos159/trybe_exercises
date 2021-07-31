@@ -138,6 +138,8 @@ const sortMoviesByYear = (moviesList) => {
 
 const moviesSortedByYear = sortMoviesByYear(movies) 
 
+// 4 Crie uma função que retorne o nome e a data de lançamento do filme com o maior título
+
 const getLongestTitle = (moviesList) => {
   const sorted = moviesList.sort((movieA, movieB) => {
     if(movieA.name.length > movieB.name.length){
