@@ -83,11 +83,9 @@ const csvString = `Date,Name,Year,Letterboxd URI
 2021-07-14,The Prestige,2006,https://boxd.it/293w
 2021-07-14,"Monsters, Inc.",2001,https://boxd.it/2a46
 2021-07-14,The Florida Project,2017,https://boxd.it/dMG0
-2021-07-14,Brokeback Mountain,2005,https://boxd.it/2b2q
-`
+2021-07-14,Brokeback Mountain,2005,https://boxd.it/2b2q`
 
 /* 1 Cria uma função chamada convertCsvToObject   que converte a string acima em um array de objetos, e cada objeto são informações de um filme. As chaves que o objeto deve ter estão na primeira linha. Obs: leve em consideração que há filmes que tem virgula no nome.
-3 Crie uma função que retorne o nome e a data de lançamento do filme mais antigo da lista
 4 Crie retorne o nome e a data de lançamento do filme com o maior título
 5 Crie uma função que retorne um array com todos os títulos em Camel Case. Por exemplo, "yourNameEngravedHerein"
  */
@@ -130,4 +128,14 @@ const sortMoviesByName = (moviesList) => {
 }
 
 const moviesSortedByName = sortMoviesByName(movies)
-console.log(moviesSortedByName)
+//console.log(moviesSortedByName)
+
+/* 3 Crie uma função que retorne o nome e a data de lançamento do filme mais antigo da lista */
+
+const sortMoviesByYear = (moviesList) => {
+  const sortedList = moviesList.sort((a, b) => a - b)
+  return sortedList
+}
+
+const moviesSortedByYear = sortMoviesByYear(movies)
+console.log(moviesSortedByYear)
