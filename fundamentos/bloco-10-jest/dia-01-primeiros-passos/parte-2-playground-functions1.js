@@ -56,14 +56,10 @@ function decode(string) {
 }
 
 function hydrate(string) {
-  let regexp = /\d+/g;
-  let arrayOfNumbers = string.match(regexp);
-  let total = 0;
-  for (let number of arrayOfNumbers) {
-    number = parseInt(number);
-    total += number;
-  }
-  return total > 1? total + ' copos de água': total + ' copo de água'
+  const regexp = /\d+/g;
+  const arrayOfNumbers = string.match(regexp).map((number) => parseInt(number));
+  let total = arrayOfNumbers.reduce((sum, number) => sum + number, 0)
+  return (total > 1) ? total + ' copos de água': total + ' copo de água'
 }
 
 function techList(array, name) {
