@@ -67,18 +67,13 @@ function hydrate(string) {
 }
 
 function techList(array, name) {
-  let arrayOfObjects = [];
+  if (array.length === 0) return 'Vazio!';
   array.sort();
-  if (array.length === 0) {
-    return 'Vazio!';
-  } else {
-    for (let technology of array) {
-      arrayOfObjects.push({
-        tech: technology,
-        name: name,
-      });
-    }
-  }
+
+  const arrayOfObjects = array.reduce((acc, tech) => {
+      acc.push({tech, name});
+      return acc;
+  }, [])
 
   return arrayOfObjects;
 }
