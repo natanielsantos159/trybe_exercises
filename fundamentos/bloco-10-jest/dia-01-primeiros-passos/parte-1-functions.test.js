@@ -1,6 +1,6 @@
 // refazendo exercicios de teste unitarios usando Jest
 
-const { sum, myRemove, myRemoveWithoutCopy, myFizzBuzz } = require('./functions')
+const { sum, myRemove, myRemoveWithoutCopy, myFizzBuzz } = require('./parte-1-functions')
 
 describe('A função sum(a, b) deve retornar a soma do parâmetro a com o b', () => {
 
