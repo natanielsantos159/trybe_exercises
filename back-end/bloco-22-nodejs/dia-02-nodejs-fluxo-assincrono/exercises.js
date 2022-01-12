@@ -83,7 +83,7 @@ const removeCharacterById = async (...paramIDs) => {
   fs.writeFile('simpsons.json', JSONdata);
 }
 
-removeCharacterById(10, 6)
+// removeCharacterById(10, 6)
 
 
 // exercicio 4.4
@@ -100,3 +100,22 @@ const createNewSimpsonFile = async (...paramsIDs) => {
 } 
 
 createNewSimpsonFile(1, 4)
+
+// exercicio 4.5
+
+
+const addToSimpsonFamily = async (paramName) => {
+  const data = await fs.readFile('simpsons.json', 'utf8')
+  const characters = JSON.parse(data);
+
+  const dataSimpsonFamily = await fs.readFile('simpsonFamily.json', 'utf8');
+  const simpsonFamily = JSON.parse(dataSimpsonFamily);
+  
+  const simpsonObj = characters.find(({name}) => paramName === name);
+  simpsonFamily.push(simpsonObj);
+
+  const JSONdata = JSON.stringify(simpsonFamily);
+  fs.writeFile('simpsonFamily.json', JSONdata);
+} 
+
+addToSimpsonFamily('Nelson Muntz');
