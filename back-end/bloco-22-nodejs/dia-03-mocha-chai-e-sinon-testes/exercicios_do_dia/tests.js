@@ -16,4 +16,11 @@ describe("Função positivoOuNegativo", () => {
       expect(positivoOuNegativo(0)).to.be.equal("neutro");
     });
   });
+
+  describe('quando recebe um valor que não é number', () => {
+    it('deve retornar "o valor deve ser um número"', () => {
+      expect(positivoOuNegativo("string")).to.be.equal("o valor deve ser um número");
+    });
+  })
+  
 });
