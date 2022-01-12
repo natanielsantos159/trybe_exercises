@@ -67,3 +67,20 @@ const getSimpsonById = (paramId) => {
 getSimpsonById(3)
   .then(console.log)
   .catch(console.error)
+
+// exercicio 4.3
+
+const removeCharacterById = async (...paramIDs) => {
+  const data = await fs.readFile('simpsons.json', 'utf8')
+  const characters = JSON.parse(data);
+
+  let filtered = characters;
+  paramIDs.forEach((currId) => {
+    filtered = filtered.filter(({id}) => +id !== currId);
+  })
+
+  const JSONdata = JSON.stringify(filtered);
+  fs.writeFile('simpsons.json', JSONdata);
+}
+
+removeCharacterById(10, 6)
