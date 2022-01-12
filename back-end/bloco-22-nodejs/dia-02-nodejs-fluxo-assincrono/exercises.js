@@ -32,6 +32,7 @@ const getResult = async () => {
 
 getResult()
 
+
 // exercicio 4.1
 const fs = require('fs').promises;
 
@@ -46,3 +47,23 @@ const readSimpsons = async () => {
 }
 
 readSimpsons();
+
+// exercicio 4.2
+
+const getSimpsonById = (paramId) => {
+  return new Promise((resolve, reject) => {
+    fs.readFile('simpsons.json', 'utf8')
+      .then((data) => JSON.parse(data))
+      .then((array) => {
+        array.forEach(({id, name}) => {
+          if (+id === paramId) resolve(`${id} - ${name}`)
+        })
+        reject("id não encontrado")
+      })
+      .catch(reject)
+  })
+}
+
+getSimpsonById(3)
+  .then(console.log)
+  .catch(console.error)
