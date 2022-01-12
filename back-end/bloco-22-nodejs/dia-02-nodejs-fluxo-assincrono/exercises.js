@@ -17,3 +17,32 @@ const getRandomNum = () => Math.floor(Math.random() * 100 + 1);
 multiplicador(getRandomNum(), getRandomNum(), getRandomNum())
   .then(console.log)
   .catch(console.error);
+
+
+// exercicio 3
+
+const getResult = async () => {
+  try {
+    const result = await multiplicador(getRandomNum(), getRandomNum(), getRandomNum())
+    console.log(result);
+  } catch(err) {
+    console.log(err);
+  }
+}
+
+getResult()
+
+// exercicio 4.1
+const fs = require('fs').promises;
+
+const readSimpsons = async () => {
+  try {
+    const datajson = await fs.readFile('simpsons.json', 'utf8')
+    const array = JSON.parse(datajson);
+    array.forEach(({id, name}) => console.log(`${id} - ${name}`))
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+readSimpsons();
