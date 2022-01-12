@@ -84,3 +84,19 @@ const removeCharacterById = async (...paramIDs) => {
 }
 
 removeCharacterById(10, 6)
+
+
+// exercicio 4.4
+
+const createNewSimpsonFile = async (...paramsIDs) => {
+  const data = await fs.readFile('simpsons.json', 'utf8')
+  const characters = JSON.parse(data);
+
+  const filtered = characters.filter(({id}) => paramsIDs.some((paramID) => paramID === +id))
+  console.log(filtered)
+
+  const JSONdata = JSON.stringify(filtered);
+  fs.writeFile('simpsonFamily.json', JSONdata);
+} 
+
+createNewSimpsonFile(1, 4)
