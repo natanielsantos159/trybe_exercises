@@ -10,3 +10,10 @@ const multiplicador = (num1, num2, num3) => {
     if (sum > 50) resolve(sum)
   });
 };
+
+// exercicio 2 
+const getRandomNum = () => Math.floor(Math.random() * 100 + 1);
+
+multiplicador(getRandomNum(), getRandomNum(), getRandomNum())
+  .then(console.log)
+  .catch(console.error);
