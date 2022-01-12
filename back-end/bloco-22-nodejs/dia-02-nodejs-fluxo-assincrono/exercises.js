@@ -99,7 +99,7 @@ const createNewSimpsonFile = async (...paramsIDs) => {
   fs.writeFile('simpsonFamily.json', JSONdata);
 } 
 
-createNewSimpsonFile(1, 4)
+// createNewSimpsonFile(1, 4)
 
 // exercicio 4.5
 
@@ -118,4 +118,24 @@ const addToSimpsonFamily = async (paramName) => {
   fs.writeFile('simpsonFamily.json', JSONdata);
 } 
 
-addToSimpsonFamily('Nelson Muntz');
+// addToSimpsonFamily('Nelson Muntz');
+
+
+// exercicio 4.6
+
+const replaceInSimpsonFamily = async (nameSimpsonFamily , nameSimpson) => {
+  const data = await fs.readFile('simpsons.json', 'utf8')
+  const characters = JSON.parse(data);
+
+  const dataSimpsonFamily = await fs.readFile('simpsonFamily.json', 'utf8');
+  const simpsonFamily = JSON.parse(dataSimpsonFamily);
+
+  const simpsonObj = characters.find(({name}) => name === nameSimpson)
+  const indexToReplace = simpsonFamily.findIndex(({name}) => name === nameSimpsonFamily) 
+  simpsonFamily.splice(indexToReplace, 1, simpsonObj);
+
+  const JSONdata = JSON.stringify(simpsonFamily);
+  fs.writeFile('simpsonFamily.json', JSONdata);
+}
+
+replaceInSimpsonFamily('Nelson Muntz', 'Maggie Simpson')
