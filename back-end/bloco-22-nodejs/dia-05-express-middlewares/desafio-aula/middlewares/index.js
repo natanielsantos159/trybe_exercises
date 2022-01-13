@@ -1,10 +1,11 @@
 const express = require("express");
 
 const app = express();
-const hello = require("./hello.js");
 const ping = require("./ping.js");
+const hello = require("./hello.js");
 const greeting = require("./greeting.js");
 const getSimpsons = require("./getSimpsons.js");
+const getSimpsonById = require("./getSimpsonById.js");
 
 app.use(express.json());
 
@@ -19,3 +20,5 @@ app.get("/ping", ping);
 app.post('/greeting', greeting)
 
 app.get('/simpsons', getSimpsons)
+
+app.get('/simpsons/:id', getSimpsonById)
