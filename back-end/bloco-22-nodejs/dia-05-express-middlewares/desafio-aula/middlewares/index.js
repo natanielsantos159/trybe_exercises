@@ -1,10 +1,14 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const hello = require('./hello.js');
+const hello = require("./hello.js");
+const ping = require("./ping.js");
 
-app.use(express.json())
+app.use(express.json());
 
 app.listen(3001, () => {
-  console.log("escutando 3001...")
-})
-app.post('/ping', hello)
+  console.log("escutando 3001...");
+});
+
+app.post("/hello", hello);
+
+app.get("/ping", ping);
