@@ -6,6 +6,7 @@ const hello = require("./hello.js");
 const greeting = require("./greeting.js");
 const getSimpsons = require("./getSimpsons.js");
 const getSimpsonById = require("./getSimpsonById.js");
+const createSimpson = require("./createSimpson.js");
 
 app.use(express.json());
 
@@ -22,3 +23,5 @@ app.post('/greeting', greeting)
 app.get('/simpsons', getSimpsons)
 
 app.get('/simpsons/:id', getSimpsonById)
+
+app.post('/simpsons', createSimpson)
