@@ -7,11 +7,16 @@ class SuperClass {
 }
 
 class SubClass extends SuperClass {
-
+  constructor() {
+    super();
+    this.isSuper = false;
+  }
 }
 
 function sayHello(obj) {
   obj.sayHello();
+  const message = obj.isSuper ? "Super!" : "Sub!";
+  console.log(message)
 }
 
 const firstObject = new SuperClass();

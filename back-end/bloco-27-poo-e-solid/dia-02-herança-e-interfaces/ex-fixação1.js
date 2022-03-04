@@ -25,12 +25,16 @@ var SuperClass = /** @class */ (function () {
 var SubClass = /** @class */ (function (_super) {
     __extends(SubClass, _super);
     function SubClass() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super.call(this) || this;
+        _this.isSuper = false;
+        return _this;
     }
     return SubClass;
 }(SuperClass));
 function sayHello(obj) {
     obj.sayHello();
+    var message = obj.isSuper ? "Super!" : "Sub!";
+    console.log(message);
 }
 var firstObject = new SuperClass();
 var secondObject = new SubClass();
